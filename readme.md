@@ -13,17 +13,20 @@
 
 
 <div id='deployment'/>
+
 # VNet Peering Bicep Deployment
 
 This project contains Bicep templates for deploying and configuring Virtual Network (VNet) peering in Microsoft Azure.
 
 <div id='files'/>
+
 ## Files in the Repository
 - **`main.bicep`**: Main Bicep template for deploying the VNets and associated resources.
 - **`vnet-peering-deployment.bicep`**: Bicep module for configuring VNet peering.
 - **`vnetdeploy.parameters.json`**: JSON file containing parameter values for customizing the deployment.
 
 <div id='features'/>
+
 ## Features
 
 - Configures peering between two VNets.
@@ -31,6 +34,7 @@ This project contains Bicep templates for deploying and configuring Virtual Netw
 - Works across different subscriptions and resource groups.
 
 <div id='parameters'/>
+
 ## Parameters and Their Meanings
 
 The following parameters are used in the deployment, along with their purpose in Azure VNet peering:
@@ -53,6 +57,7 @@ The following parameters are used in the deployment, along with their purpose in
 | `EnableRemoteGWVNet2ToVNet1`        | **Use remote gateways for VNet2.** Enable 'vnet2' to use 'vnet1' remote gateway or route server.         | `true`                             |
 
 <div id='key'/>
+
 ### Key Notes on Variables:
 
 1. **Virtual Network Peering**:
@@ -69,6 +74,7 @@ The following parameters are used in the deployment, along with their purpose in
    - Allows a VNet to utilize the gateway in the peered VNet, typically in a hub-and-spoke architecture.
 
 <div id='prereq'/>
+
 ## Prerequisites
 
 1. Azure CLI installed on your local machine.
@@ -76,6 +82,7 @@ The following parameters are used in the deployment, along with their purpose in
 3. Ensure you are logged in to Azure CLI (`az login`).
 
 <div id='instructions'/>
+
 ## Deployment Instructions
 
 1. **Clone the repository**:
@@ -126,6 +133,7 @@ Replace <deployment-location> with the Azure region where you want the deploymen
     Ensure the SubscriptionId, ResourceGroupName, and VNetName values align with your Azure environment.
 
 <div id='example'/>
+
 # Example setup of peering VNET with Virtual Network Gateway to another
 
 In this scenario we have in Connectivity Subscription VPN Gateway for point 2 site connectivity and Azure Bastion sevice from where users need to access VM and Database located on Aplication X subscription in virtual network vnet-app1-prod. 
@@ -139,6 +147,7 @@ For this we will create VNET peering between vnet-conn-prod and vnet-app1-prod. 
 <img src="./pictures/network-example.png">
 
 <div id='exampleParameters'/>
+
 ## Example parameters
 
 To be able to fullfil requirements we need to allow traffic between VNETs, Allow forwarded traffic from vnet-conn-prod and define vnet-app1-prod to use remote gateway.
