@@ -21,7 +21,7 @@
             "value": false
         },
         "AllowAccessVNet2ToVNet1": {
-            "value": true
+            "value": false
         },
         "EnableRemoteGWVNet2ToVNet1": {
             "value": true

@@ -43,14 +43,14 @@ The following parameters are used in the deployment, along with their purpose in
 | `vnet2SubscriptionId`           | **Subscription ID of the second VNet.** Used to identify the subscription containing VNet2.     | `12345abc-1234-5678-9abc-defghijklm12` |
 | `vnet2ResourceGroupName`        | **Resource group name for the second VNet.** Indicates where VNet2 is located.                | `rg-example2-network01`                      |
 | `vnet2Name`                     | **Name of the second VNet.** The name of the virtual network to be peered.                    | `vnet02`                      |
-| `AllowTrafficToVNet1FromVNet2`    | **Allow forwarded traffic for VNet1.** Enables traffic that is forwarded from a virtual appliance in VNet1 to flow to VNet2. This is commonly used when a network virtual appliance (NVA) is configured in VNet1. | `true`                              |
-| `AllowForwardingVnet1ToVNet2`      | **Allow gateway transit for VNet1.** Allows VNet2 to utilize the gateway in VNet1. This is often used when a VPN or ExpressRoute gateway is configured in VNet1. | `false`                             |
-| `allowVirtualNetworkAccessVnet1`| **Allow virtual network access for VNet1.** Enables VNet1 to communicate directly with VNet2 without public IPs. This is typically required for VNet peering. | `true`                              |
-| `EnableRemoteGWVNet1ToVNet2`        | **Use remote gateways for VNet1.** Enables VNet1 to use the gateway in VNet2 for outbound traffic. Note: `AllowForwardingVnet2ToVNet1` must be set to `true` for this to work. | `false`                             |
-| `AllowTrafficToVNet2FromVNet1`    | **Allow forwarded traffic for VNet2.** Similar to `allowForwardedTrafficVnet1`, but for VNet2.  | `true`                              |
-| `AllowForwardingVnet2ToVNet1`      | **Allow gateway transit for VNet2.** Similar to `allowGatewayTransitVnet1`, but for VNet2.     | `false`                             |
-| `AllowAccessVNet2ToVNet1`| **Allow virtual network access for VNet2.** Similar to `allowVirtualNetworkAccessVnet1`, but for VNet2. | `true`                              |
-| `EnableRemoteGWVNet2ToVNet1`        | **Use remote gateways for VNet2.** Similar to `useRemoteGatewaysVnet1`, but for VNet2.         | `false`                             |
+| `AllowTrafficToVNet1FromVNet2`    | **Allow forwarded traffic for VNet1.** Enables traffic that is forwarded from a virtual appliance in VNet1 to flow to VNet2. This is commonly used when a network virtual appliance (NVA) is configured in VNet1. | `false`                              |
+| `AllowForwardingVnet1ToVNet2`      | **Allow gateway transit for VNet1.** Allows VNet2 to utilize the gateway in VNet1. This is often used when a VPN or ExpressRoute gateway is configured in VNet1. | `true`                             |
+| `AllowAccessVNet1ToVNet2`| **Allow virtual network access from VNet1.** Enables VNet1 to communicate directly with VNet2 without public IPs. This is typically required for VNet peering. | `true`                              |
+| `EnableRemoteGWVNet1ToVNet2`        | **Use remote gateways for VNet1.** Enables VNet1 to use the gateway in VNet2 for outbound traffic. Note: `allowGatewayTransitVnet2` must be set to `true` for this to work. | `false`                             |
+| `AllowTrafficToVNet2FromVNet1`    | **Allow forwarded traffic for VNet2.** Similar to `AllowTrafficToVNet1FromVNet2`, but for VNet2.  | `true`                              |
+| `AllowForwardingVnet2ToVNet1`      | **Allow gateway transit for VNet2.** Similar to `AllowForwardingVnet1ToVNet2`, but for VNet2.     | `false`                             |
+| `AllowAccessVNet2ToVNet1`| **Allow virtual network access for VNet2.** Similar to `AllowAccessVNet1ToVNet2`, but for VNet2. | `false`                              |
+| `EnableRemoteGWVNet2ToVNet1`        | **Use remote gateways for VNet2.** Similar to `EnableRemoteGWVNet2ToVNet1`, but for VNet2.         | `true`                             |
 
 <div id='key'/>
 ### Key Notes on Variables:
@@ -152,15 +152,14 @@ To be able to fullfil requirements we need to allow traffic between VNETs, Allow
 | `vnet2SubscriptionId`           | **Subscription ID of the second VNet.** Used to identify the subscription containing VNet2.     | `abcdef12-3456-7890-abcd-ef1234567890` |
 | `vnet2ResourceGroupName`        | **Resource group name for the second VNet.** Indicates where VNet2 is located.                | `rg-application1-prod`                      |
 | `vnet2Name`                     | **Name of the second VNet.** The name of the virtual network to be peered.                    | `vnet-app1-prod`                      |
-| `AllowTrafficToVNet1FromVNet2`    | **Allow forwarded traffic for VNet1.** Enables traffic that is forwarded from a virtual appliance in VNet1 to flow to VNet2. This is commonly used when a network virtual appliance (NVA) is configured in VNet1. | `true`                              |
-| `AllowForwardingVnet1ToVNet2`      | **Allow gateway transit for VNet1.** Allows VNet2 to utilize the gateway in VNet1. This is often used when a VPN or ExpressRoute gateway is configured in VNet1. | `false`                             |
-| `allowVirtualNetworkAccessVnet1`| **Allow virtual network access for VNet1.** Enables VNet1 to communicate directly with VNet2 without public IPs. This is typically required for VNet peering. | `true`                              |
-| `EnableRemoteGWVNet1ToVNet2`        | **Use remote gateways for VNet1.** Enables VNet1 to use the gateway in VNet2 for outbound traffic. Note: `AllowForwardingVnet2ToVNet1` must be set to `true` for this to work. | `false`                             |
-| `AllowTrafficToVNet2FromVNet1`    | **Allow forwarded traffic for VNet2.** Similar to `allowForwardedTrafficVnet1`, but for VNet2.  | `true`                              |
-| `AllowForwardingVnet2ToVNet1`      | **Allow gateway transit for VNet2.** Similar to `allowGatewayTransitVnet1`, but for VNet2.     | `false`                             |
-| `AllowAccessVNet2ToVNet1`| **Allow virtual network access for VNet2.** Similar to `allowVirtualNetworkAccessVnet1`, but for VNet2. | `true`                              |
-| `EnableRemoteGWVNet2ToVNet1`        | **Use remote gateways for VNet2.** Similar to `useRemoteGatewaysVnet1`, but for VNet2.         | `false`                             |
-
+| `AllowTrafficToVNet1FromVNet2`    | **Allow forwarded traffic for VNet1.** Enables traffic that is forwarded from a virtual appliance in VNet1 to flow to VNet2. This is commonly used when a network virtual appliance (NVA) is configured in VNet1. | `false`                              |
+| `AllowForwardingVnet1ToVNet2`      | **Allow gateway transit for VNet1.** Allows VNet2 to utilize the gateway in VNet1. This is often used when a VPN or ExpressRoute gateway is configured in VNet1. | `true`                             |
+| `AllowAccessVNet1ToVNet2`| **Allow virtual network access from VNet1.** Enables VNet1 to communicate directly with VNet2 without public IPs. This is typically required for VNet peering. | `true`                              |
+| `EnableRemoteGWVNet1ToVNet2`        | **Use remote gateways for VNet1.** Enables VNet1 to use the gateway in VNet2 for outbound traffic. Note: `allowGatewayTransitVnet2` must be set to `true` for this to work. | `false`                             |
+| `AllowTrafficToVNet2FromVNet1`    | **Allow forwarded traffic for VNet2.** Similar to `AllowTrafficToVNet1FromVNet2`, but for VNet2.  | `true`                              |
+| `AllowForwardingVnet2ToVNet1`      | **Allow gateway transit for VNet2.** Similar to `AllowForwardingVnet1ToVNet2`, but for VNet2.     | `false`                             |
+| `AllowAccessVNet2ToVNet1`| **Allow virtual network access for VNet2.** Similar to `AllowAccessVNet1ToVNet2`, but for VNet2. | `false`                              |
+| `EnableRemoteGWVNet2ToVNet1`        | **Use remote gateways for VNet2.** Similar to `EnableRemoteGWVNet2ToVNet1`, but for VNet2.         | `true`                             |
 
 
 <div id='license'/>
