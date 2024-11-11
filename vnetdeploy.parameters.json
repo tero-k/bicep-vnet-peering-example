@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "AllowTrafficToVNet1FromVNet2": {
+            "value": false
+        },
+        "AllowForwardingVnet1ToVNet2": {
+            "value": true
+        },
+        "AllowAccessVNet1ToVNet2": {
+            "value": true
+        },
+        "EnableRemoteGWVNet1ToVNet2": {
+            "value": false
+        },
+        "AllowTrafficToVNet2FromVNet1": {
+            "value": true
+        },
+        "AllowForwardingVnet2ToVNet1": {
+            "value": false
+        },
+        "AllowAccessVNet2ToVNet1": {
+            "value": true
+        },
+        "EnableRemoteGWVNet2ToVNet1": {
+            "value": true
+        },
+        "vnet1SubscriptionId": {
+            "value": "12345678-90ab-cdef-1234-567890abcdef"
+        },
+        "vnet1ResourceGroupName": {
+            "value": "rg-connectivity-prod"
+        },
+        "vnet1Name": {
+            "value": "vnet-conn-prod"
+        },
+        "vnet2SubscriptionId": {
+            "value": "abcdef12-3456-7890-abcd-ef1234567890"
+        },
+        "vnet2ResourceGroupName": {
+            "value": "rg-application1-prod"
+        },
+        "vnet2Name": {
+            "value": "vnet-app1-prod"
+        }
+    }
+}
