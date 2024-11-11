@@ -129,8 +129,7 @@ Replace <deployment-location> with the Azure region where you want the deploymen
 
 # Notes
 
-    Modify the vnetdeploy.parameters.json file as needed to customize the deployment (e.g., enabling or disabling specific peering features).
-    Ensure the SubscriptionId, ResourceGroupName, and VNetName values align with your Azure environment.
+Modify the vnetdeploy.parameters.json file as needed to customize the deployment (e.g., enabling or disabling specific peering features). Ensure the SubscriptionId, ResourceGroupName, and VNetName values align with your Azure environment.
 
 <div id='example'/>
 
