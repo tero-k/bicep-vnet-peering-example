@@ -9,8 +9,6 @@
 2. [Notes](#notes)
 3. [Example setup of peering VNET with Virtual Network Gateway to another](#example)
    1. [Example parameters](#exampleParameters)
-4. [License](#license)
-
 
 <div id='deployment'/>
 
@@ -170,8 +168,3 @@ To be able to fullfil requirements we need to allow traffic between VNETs, Allow
 | `EnableRemoteGWVNet2ToVNet1`        | **Use remote gateways for vnet-app1-prod.** Enable 'vnet-app1-prod' to use 'vnet-conn-prod' remote gateway or route server.         | `true`                             |
 
 
-<div id='license'/>
-
-# License
-
-This project is licensed under the MIT License.
